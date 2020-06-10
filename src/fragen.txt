@@ -1,0 +1,8 @@
+Aufgabe:
+
+"Binden Sie die System-Operationen an das entsprechende Interface Ihres Use Cases. Ver-
+ gewissern Sie sich, dass diese Operationen auch über einen Port der Logik-Komponente."
+
+ "Erstellen Sie für Ihren Use Case eine geeignete Klasse (UseCaseImpl), die die Implemen-
+  tierung der System-Operationen übernimmt und legen Sie diese Klasse in ein entsprechen-
+  des Package („impl“), das nur für die Implementierung dieses Use Case gedacht ist. "

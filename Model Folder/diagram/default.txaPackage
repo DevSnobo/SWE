@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<node uin="-yrgd8ekb7zusj67hgqu8">
+		<property name="$metaclass" value="SD20_Interaction"/>
+		<property name="$name" value="Spielzug"/>
+		<node uin="-y8nsowkb7zv6eqhq8hty">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline2"/>
+			<property name="connectableElementName" value="Gui"/>
+			<node uin="l2gqtvkb7zvo5oogq5w7">
+				<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
+				<property name="$name" value="SD20_Int_InvocationSpecification1"/>
+				<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvkb7zvo5pz821a2:-y8nsowkb7zv4v9-b30a1w:-yrgd8ekb7zusj67hgqu8"/>
+				<property name="call_cachedSequenceNumber" value="1"/>
+				<link uin="ieje0rkb7zvzr8-6fbnn5">
+					<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+					<participant referencedUin="design:node:::l2gqtvkb7zvo5oogq5w7:-y8nsowkb7zv6eqhq8hty:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
+					<participant referencedUin="jdt:e_method:src:application.logic.LogicFactoryImpl.rollDice:rollDice" role="Supplier"></participant>
+				</link>
+			</node>
+			<node uin="l2gqtvkb7zwgpf-yplmro">
+				<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
+				<property name="$name" value="SD20_Int_InvocationSpecification2"/>
+				<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvkb7zwgphdb9dyj:-y8nsowkb7zv4v9-b30a1w:-yrgd8ekb7zusj67hgqu8"/>
+				<property name="call_cachedSequenceNumber" value="2"/>
+				<link uin="ieje0rkb7zwno5xn3ajm">
+					<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+					<participant referencedUin="design:node:::l2gqtvkb7zwgpf-yplmro:-y8nsowkb7zv6eqhq8hty:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
+					<participant referencedUin="jdt:e_method:src:application.logic.LogicFactoryImpl.moveUnit:moveUnit" role="Supplier"></participant>
+				</link>
+			</node>
+			<link uin="ieje0rkb7zvo68-dfn7wt">
+				<property name="$metaclass" value="SD20_Int_CommunicationLink"/>
+				<participant referencedUin="design:node:::-y8nsowkb7zv6eqhq8hty:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
+				<participant referencedUin="design:node:::-y8nsowkb7zv4v9-b30a1w:-yrgd8ekb7zusj67hgqu8" role="Supplier"></participant>
+			</link>
+			<link uin="ieje0rkb80axjrut9tpy">
+				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
+				<participant referencedUin="design:node:::-y8nsowkb7zv6eqhq8hty:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
+				<participant referencedUin="jdt:e_class:src:application.gui.GuiFactoryImpl" role="Supplier"></participant>
+			</link>
+		</node>
+		<node uin="-y8nsowkb7zv4v9-b30a1w">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline1"/>
+			<property name="connectableElementName" value="Logik"/>
+			<node uin="c87hzvkb7zvo5pz821a2">
+				<property name="$metaclass" value="SD20_ExecutionSpecification"/>
+				<property name="$name" value="SD20_ExecutionSpecification1"/>
+			</node>
+			<node uin="c87hzvkb7zwgphdb9dyj">
+				<property name="$metaclass" value="SD20_ExecutionSpecification"/>
+				<property name="$name" value="SD20_ExecutionSpecification2"/>
+			</node>
+			<link uin="ieje0rkb7zvl2w2fd1ru">
+				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
+				<participant referencedUin="design:node:::-y8nsowkb7zv4v9-b30a1w:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
+				<participant referencedUin="jdt:e_class:src:application.logic.LogicFactoryImpl" role="Supplier"></participant>
+			</link>
+		</node>
+	</node>
+</nodeSet>

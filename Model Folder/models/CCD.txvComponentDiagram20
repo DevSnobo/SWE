@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V-oyrl70kb81pwezrjin5j">
+		<property name="$metaclass" value="ComponentDiagram20"/>
+		<property name="$name" value="CCD"/>
+		<reference referencedUin="design:node:::ba089nkb81qfpfddn7ed">
+			<property name="bounds" value="95,35,421,60"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="design:node:::-vedwtdkb81qtlfe5pnsv:ba089nkb81qfpfddn7ed">
+				<property name="bounds" value="360,53,14,14"/>
+				<property name="location_set_by_user" value="true"/>
+				<reference referencedUin="design:link:::ieje0rkb81s67e2kvist:-vedwtdkb81qtlfe5pnsv:ba089nkb81qfpfddn7ed">
+					<property name="sourceAnchor" value="466,107"/>
+					<property name="targetAnchor" value="468,140"/>
+					<property name="bendpoints" value=""/>
+				</reference>
+				<reference referencedUin="label:$port20InplaceEditing:design:node:::-vedwtdkb81qtlfe5pnsv:ba089nkb81qfpfddn7ed">
+					<property name="bounds" value="2,24,10,18"/>
+				</reference>
+			</reference>
+		</reference>
+		<reference referencedUin="design:node:::ba089nkb81qisjlhubia">
+			<property name="bounds" value="75,215,581,301"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="design:node:::-vedwtdkb81seoypelhu5:ba089nkb81qisjlhubia">
+				<property name="bounds" value="381,-7,14,14"/>
+				<property name="location_set_by_user" value="true"/>
+				<reference referencedUin="label:$port20InplaceEditing:design:node:::-vedwtdkb81seoypelhu5:ba089nkb81qisjlhubia">
+					<property name="bounds" value="-5,24,25,18"/>
+				</reference>
+				<reference referencedUin="design:link:::ieje0rkb81sn6j-i2my19:-vedwtdkb81seoypelhu5:ba089nkb81qisjlhubia">
+					<property name="sourceAnchor" value="468,213"/>
+					<property name="targetAnchor" value="469,160"/>
+					<property name="bendpoints" value=""/>
+				</reference>
+			</reference>
+			<reference referencedUin="design:node:::ba089nkb81tlwigrvs77:ba089nkb81qisjlhubia">
+				<property name="bounds" value="390,118,161,121"/>
+				<property name="location_set_by_user" value="true"/>
+				<property name="bounds_setted_by_user" value="true"/>
+				<reference referencedUin="design:node:::-vedwtdkb832tzncdlrhw:ba089nkb81tlwigrvs77:ba089nkb81qisjlhubia">
+					<property name="bounds" value="-7,20,14,14"/>
+					<property name="location_set_by_user" value="true"/>
+					<reference referencedUin="label:$port20InplaceEditing:design:node:::-vedwtdkb832tzncdlrhw:ba089nkb81tlwigrvs77:ba089nkb81qisjlhubia">
+						<property name="bounds" value="2,24,10,18"/>
+					</reference>
+				</reference>
+			</reference>
+			<reference referencedUin="design:node:::ba089nkb81tb3n4zb9vm:ba089nkb81qisjlhubia">
+				<property name="bounds" value="16,118,161,121"/>
+				<property name="location_set_by_user" value="true"/>
+				<property name="bounds_setted_by_user" value="true"/>
+				<reference referencedUin="design:node:::-vedwtdkb81uale-j8eqkr:ba089nkb81tb3n4zb9vm:ba089nkb81qisjlhubia">
+					<property name="bounds" value="154,20,14,14"/>
+					<property name="location_set_by_user" value="true"/>
+					<reference referencedUin="label:$port20InplaceEditing:design:node:::-vedwtdkb81uale-j8eqkr:ba089nkb81tb3n4zb9vm:ba089nkb81qisjlhubia">
+						<property name="bounds" value="2,24,10,18"/>
+					</reference>
+				</reference>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.statemachine.port.Subject">
+			<property name="bounds" value="455,135,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.statemachine.port.Subject">
+				<property name="bounds" value="40,1,45,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>
