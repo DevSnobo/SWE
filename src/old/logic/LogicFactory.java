@@ -1,7 +1,7 @@
-package application.logic;
+package old.logic;
 
-import application.gui.GamePort;
-import application.logic.port.MVCPort;
+import old.gui.GamePort;
+import old.logic.port.MVCPort;
 
 public interface LogicFactory {
 	

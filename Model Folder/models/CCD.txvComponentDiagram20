@@ -65,11 +65,11 @@
 				</reference>
 			</reference>
 		</reference>
-		<reference referencedUin="jdt:e_class:src:application.statemachine.port.Subject">
+		<reference referencedUin="jdt:e_class:src:old.statemachine.port.Subject">
 			<property name="bounds" value="455,135,20,20"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="$shortcutReference" value="true"/>
-			<reference referencedUin="label:$name:jdt:e_class:src:application.statemachine.port.Subject">
+			<reference referencedUin="label:$name:jdt:e_class:src:old.statemachine.port.Subject">
 				<property name="bounds" value="40,1,45,18"/>
 				<property name="location_set_by_user" value="true"/>
 			</reference>

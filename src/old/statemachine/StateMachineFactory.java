@@ -1,7 +1,7 @@
-package application.statemachine;
+package old.statemachine;
 
-import application.statemachine.port.StateMachinePort;
-import application.statemachine.port.SubjectPort;
+import old.statemachine.port.StateMachinePort;
+import old.statemachine.port.SubjectPort;
 
 public interface StateMachineFactory {
 

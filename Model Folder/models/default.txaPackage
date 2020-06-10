@@ -13,7 +13,7 @@
 			<link uin="ieje0rkb81s67e2kvist">
 				<property name="$metaclass" value="RequiredInterface20"/>
 				<participant referencedUin="design:node:::-vedwtdkb81qtlfe5pnsv:ba089nkb81qfpfddn7ed" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.statemachine.port.Subject" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:old.statemachine.port.Subject" role="Supplier"></participant>
 			</link>
 		</node>
 	</node>
@@ -28,7 +28,7 @@
 			<link uin="ieje0rkb81sn6j-i2my19">
 				<property name="$metaclass" value="ProvidedInterface20"/>
 				<participant referencedUin="design:node:::-vedwtdkb81seoypelhu5:ba089nkb81qisjlhubia" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.statemachine.port.Subject" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:old.statemachine.port.Subject" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="ba089nkb81tb3n4zb9vm">

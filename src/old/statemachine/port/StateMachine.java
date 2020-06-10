@@ -1,4 +1,4 @@
-package application.statemachine.port;
+package old.statemachine.port;
 
 public interface StateMachine {
 	void setState(State state);

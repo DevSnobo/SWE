@@ -1,6 +1,6 @@
-package application.statemachine;
+package old.statemachine;
 
-import application.statemachine.port.*;
+import old.statemachine.port.*;
 
 public class StateMachineFactoryImpl implements StateMachineFactory, StateMachinePort, StateMachine, SubjectPort, Subject {
 

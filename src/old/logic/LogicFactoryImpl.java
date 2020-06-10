@@ -1,9 +1,9 @@
-package application.logic;
+package old.logic;
 
-import application.gui.GamePort;
-import application.statemachine.StateMachineFactory;
-import application.logic.port.MVCPort;
-import application.statemachine.port.SubjectPort;
+import old.gui.GamePort;
+import old.statemachine.StateMachineFactory;
+import old.logic.port.MVCPort;
+import old.statemachine.port.SubjectPort;
 
 public class LogicFactoryImpl implements LogicFactory, MVCPort, GamePort {
 	

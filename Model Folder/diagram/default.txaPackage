@@ -17,7 +17,7 @@
 				<link uin="ieje0rkb7zvzr8-6fbnn5">
 					<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 					<participant referencedUin="design:node:::l2gqtvkb7zvo5oogq5w7:-y8nsowkb7zv6eqhq8hty:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
-					<participant referencedUin="jdt:e_method:src:application.logic.LogicFactoryImpl.rollDice:rollDice" role="Supplier"></participant>
+					<participant referencedUin="jdt:e_method:src:old.logic.LogicFactoryImpl.rollDice:rollDice" role="Supplier"></participant>
 				</link>
 			</node>
 			<node uin="l2gqtvkb7zwgpf-yplmro">
@@ -28,7 +28,7 @@
 				<link uin="ieje0rkb7zwno5xn3ajm">
 					<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
 					<participant referencedUin="design:node:::l2gqtvkb7zwgpf-yplmro:-y8nsowkb7zv6eqhq8hty:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
-					<participant referencedUin="jdt:e_method:src:application.logic.LogicFactoryImpl.moveUnit:moveUnit" role="Supplier"></participant>
+					<participant referencedUin="jdt:e_method:src:old.logic.LogicFactoryImpl.moveUnit:moveUnit" role="Supplier"></participant>
 				</link>
 			</node>
 			<link uin="ieje0rkb7zvo68-dfn7wt">
@@ -39,7 +39,7 @@
 			<link uin="ieje0rkb80axjrut9tpy">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowkb7zv6eqhq8hty:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.gui.GuiFactoryImpl" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:old.gui.GuiFactoryImpl" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="-y8nsowkb7zv4v9-b30a1w">
@@ -57,7 +57,7 @@
 			<link uin="ieje0rkb7zvl2w2fd1ru">
 				<property name="$metaclass" value="SD20_Lifeline_LinkToConnectableElement"/>
 				<participant referencedUin="design:node:::-y8nsowkb7zv4v9-b30a1w:-yrgd8ekb7zusj67hgqu8" role="Client"></participant>
-				<participant referencedUin="jdt:e_class:src:application.logic.LogicFactoryImpl" role="Supplier"></participant>
+				<participant referencedUin="jdt:e_class:src:old.logic.LogicFactoryImpl" role="Supplier"></participant>
 			</link>
 		</node>
 	</node>
