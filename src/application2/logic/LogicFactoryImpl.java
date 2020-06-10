@@ -5,7 +5,6 @@ import application2.logic.port.MVCPort;
 import application2.moveturn.MoveTurnFactory;
 import application2.moveturn.port.GameplayMethods;
 import application2.moveturn.port.GameProviderPort;
-import application2.statemachine.StateMachineFactory;
 import application2.statemachine.port.Subject;
 import application2.statemachine.port.SubjectPort;
 
@@ -31,8 +30,8 @@ class LogicFactoryImpl implements LogicFactory, GameAccessPort, MVCPort {
     }
 
     @Override
-    public GameplayMethods gameFunctions() {
-        return this.gameProviderPort.gameFunctions();
+    public GameplayMethods gameplayMethods() {
+        return this.gameProviderPort.gameplayMethods();
     }
 
 }

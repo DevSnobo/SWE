@@ -7,10 +7,7 @@ public interface  StateMachineFactory {
 
 	StateMachineFactory FACTORY = new StateMachineFactoryImpl();
 
-	public SubjectPort subjectPort();
+	SubjectPort subjectPort();
 
-	public StateMachinePort stateMachinePort();
-
-
-
+	StateMachinePort stateMachinePort();
 }

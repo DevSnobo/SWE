@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface State {
 
-    public boolean isSubStateOf(State state);
+    boolean isSubStateOf(State state);
 
-    public boolean isSuperStateOf(State state);
+    boolean isSuperStateOf(State state);
 
-    public enum S implements State {
+    enum S implements State {
         //BEGIN_TURN = check
         BEGIN_TURN, TACTIVE, TPASSIVE, THROW(TACTIVE, TPASSIVE), AMOVE, PMOVE, MOVE(AMOVE, PMOVE), NEXTPLAYER, USECASE;
 
