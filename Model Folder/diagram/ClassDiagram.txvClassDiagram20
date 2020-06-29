@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhkb9kcj17-udu5oq">
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="$name" value="ClassDiagram"/>
+		<reference referencedUin="jdt:e_class:src:application.gui.GuiFactoryImpl">
+			<property name="bounds" value="115,155,401,162"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.gui.GuiFactoryImpl:mvcPort">
+				<property name="sourceAnchor" value="521,210"/>
+				<property name="targetAnchor" value="600,210"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:application.gui.GuiFactoryImpl:GuiFactory">
+				<property name="sourceAnchor" value="468,160"/>
+				<property name="targetAnchor" value="468,92"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:application.gui.GuiFactoryImpl:UiPort">
+				<property name="sourceAnchor" value="282,160"/>
+				<property name="targetAnchor" value="282,111"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:application.gui.GuiFactoryImpl:Ui">
+				<property name="sourceAnchor" value="330,160"/>
+				<property name="targetAnchor" value="330,111"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.gui.GuiFactoryImpl:gameAccessPort">
+				<property name="sourceAnchor" value="521,290"/>
+				<property name="targetAnchor" value="640,290"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.gui.GuiFactory">
+			<property name="bounds" value="453,67,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.gui.GuiFactory:FACTORY">
+				<property name="sourceAnchor" value="476,87"/>
+				<property name="targetAnchor" value="473,90"/>
+				<property name="bendpoints" value="507,88,507,121,474,121"/>
+				<property name="smooth_bendpoints" value="507,88,507,121,474,121"/>
+			</reference>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.gui.GuiFactory">
+				<property name="bounds" value="-36,-18,67,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.gui.port.Ui">
+			<property name="bounds" value="315,86,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.gui.port.Ui">
+				<property name="bounds" value="2,-20,13,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.gui.port.UiPort">
+			<property name="bounds" value="267,86,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.gui.port.UiPort">
+				<property name="bounds" value="-34,-22,40,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.LogicFactoryImpl">
+			<property name="bounds" value="735,155,513,215"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:application.logic.LogicFactoryImpl:LogicFactory">
+				<property name="sourceAnchor" value="790,160"/>
+				<property name="targetAnchor" value="790,100"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:application.logic.LogicFactoryImpl:GameAccessPort">
+				<property name="sourceAnchor" value="740,290"/>
+				<property name="targetAnchor" value="660,290"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.logic.LogicFactoryImpl:gameProviderPort">
+				<property name="sourceAnchor" value="740,340"/>
+				<property name="targetAnchor" value="657,403"/>
+				<property name="bendpoints" value="720,340"/>
+				<property name="smooth_bendpoints" value="720,340"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:application.logic.LogicFactoryImpl:subjectPort">
+				<property name="sourceAnchor" value="740,360"/>
+				<property name="targetAnchor" value="556,442"/>
+				<property name="bendpoints" value="620,360"/>
+				<property name="smooth_bendpoints" value="620,360"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:application.logic.LogicFactoryImpl:MVCPort">
+				<property name="sourceAnchor" value="740,210"/>
+				<property name="targetAnchor" value="620,210"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.LogicFactory">
+			<property name="bounds" value="775,75,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.logic.LogicFactory:FACTORY">
+				<property name="sourceAnchor" value="798,95"/>
+				<property name="targetAnchor" value="795,98"/>
+				<property name="bendpoints" value="829,96,829,129,796,129"/>
+				<property name="smooth_bendpoints" value="829,96,829,129,796,129"/>
+			</reference>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.logic.LogicFactory">
+				<property name="bounds" value="-83,-1,78,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.port.GameAccessPort">
+			<property name="bounds" value="635,275,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:application.logic.port.GameAccessPort:GameProviderPort">
+				<property name="sourceAnchor" value="650,300"/>
+				<property name="targetAnchor" value="650,400"/>
+			</reference>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.logic.port.GameAccessPort">
+				<property name="bounds" value="-67,-30,105,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.port.MVCPort">
+			<property name="bounds" value="595,195,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:application.logic.port.MVCPort:SubjectPort">
+				<property name="sourceAnchor" value="549,200"/>
+				<property name="targetAnchor" value="549,440"/>
+			</reference>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.logic.port.MVCPort">
+				<property name="bounds" value="-14,-17,55,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.moveturn.MoveTurnFactoryImpl">
+			<property name="bounds" value="614,515,200,220"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:application.moveturn.MoveTurnFactoryImpl:MoveTurnFactory">
+				<property name="sourceAnchor" value="819,530"/>
+				<property name="targetAnchor" value="870,530"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:application.moveturn.MoveTurnFactoryImpl:GameplayMethods">
+				<property name="sourceAnchor" value="750,520"/>
+				<property name="targetAnchor" value="750,480"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:application.moveturn.MoveTurnFactoryImpl:GameProviderPort">
+				<property name="sourceAnchor" value="650,520"/>
+				<property name="targetAnchor" value="650,420"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.moveturn.MoveTurnFactory">
+			<property name="bounds" value="865,515,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.moveturn.MoveTurnFactory:FACTORY">
+				<property name="sourceAnchor" value="888,535"/>
+				<property name="targetAnchor" value="885,538"/>
+				<property name="bendpoints" value="919,536,919,569,886,569"/>
+				<property name="smooth_bendpoints" value="919,536,919,569,886,569"/>
+			</reference>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.moveturn.MoveTurnFactory">
+				<property name="bounds" value="19,-17,110,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.moveturn.port.GameProviderPort">
+			<property name="bounds" value="635,395,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.moveturn.port.GameProviderPort">
+				<property name="bounds" value="22,-1,117,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.moveturn.port.GameplayMethods">
+			<property name="bounds" value="735,455,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<reference referencedUin="label:$name:jdt:e_class:src:application.moveturn.port.GameplayMethods">
+				<property name="bounds" value="17,-22,117,18"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

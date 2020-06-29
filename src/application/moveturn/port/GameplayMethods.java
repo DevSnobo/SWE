@@ -1,14 +1,22 @@
 package application.moveturn.port;
 
+import application.moveturn.impl.Player;
+import application.moveturn.impl.Turn;
+
+import java.util.List;
+
 public interface GameplayMethods {
     void initGame();
-    void startTurn();
+    void startGame();
     void rollDice();
-    void move(int pos);
+    int getCurrentResult();
+    List<Turn> getCurrentTurnList();
+    void selectTurn(int pos);
+    void move();
+
+    Player getCurrentPlayer();
 
     /**
-     * setNextPlayer()
-     * getActivePlayer()
      * getAllUnits()
      */
 }

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V-d9nhuokbrvjuypbkc50g">
+		<property name="$metaclass" value="StateDiagram20"/>
+		<property name="$name" value="StateDiagram"/>
+		<reference referencedUin="design:node:::j8ctxykbs1r3zw-o4ie7u">
+			<property name="bounds" value="55,35,1186,466"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="$shortcutReference" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="design:node:::-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+				<property name="bounds" value="0,0,1184,437"/>
+				<property name="location_set_by_user" value="true"/>
+				<reference referencedUin="design:node:::-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+					<property name="bounds" value="224,41,922,361"/>
+					<property name="location_set_by_user" value="true"/>
+					<property name="bounds_setted_by_user" value="true"/>
+					<reference referencedUin="design:link:::ieje0rkbs202iy-1kp92a:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+						<property name="sourceAnchor" value="280,389"/>
+						<property name="targetAnchor" value="118,389"/>
+						<property name="bendpoints" value=""/>
+						<reference referencedUin="label:$transitionLabel20Inplace:design:link:::ieje0rkbs202iy-1kp92a:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="161,392,76,22"/>
+						</reference>
+					</reference>
+					<reference referencedUin="design:node:::-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+						<property name="bounds" value="0,0,920,332"/>
+						<property name="location_set_by_user" value="true"/>
+						<reference referencedUin="design:node:::sbb29vkbs1vgmt-zdjwfs:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="188,228,87,52"/>
+							<property name="location_set_by_user" value="true"/>
+							<reference referencedUin="design:link:::7cqq3vkbs1vgmt4lzwsy:sbb29vkbs1vgmt-zdjwfs:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="512,352"/>
+								<property name="targetAnchor" value="512,300"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::7cqq3vkbs1vgmt4lzwsy:sbb29vkbs1vgmt-zdjwfs:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="433,315,76,22"/>
+								</reference>
+							</reference>
+							<reference referencedUin="design:node:::c7wvqykbs1vgmtr2c3zq:sbb29vkbs1vgmt-zdjwfs:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="bounds" value="0,0,85,23"/>
+								<property name="location_set_by_user" value="true"/>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::ygwv11kbs1vgmsmot8eg:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="202,147,60,30"/>
+							<property name="location_set_by_user" value="true"/>
+							<reference referencedUin="design:link:::m5159gkbs1vgms-s7wba:ygwv11kbs1vgmsmot8eg:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="484,285"/>
+								<property name="targetAnchor" value="321,286"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::m5159gkbs1vgms-s7wba:ygwv11kbs1vgmsmot8eg:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="362,288,81,22"/>
+								</reference>
+							</reference>
+							<reference referencedUin="design:link:::6aoqnpkbs1vgms-f9c8ny:ygwv11kbs1vgmsmot8eg:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="513,271"/>
+								<property name="targetAnchor" value="513,188"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::6aoqnpkbs1vgms-f9c8ny:ygwv11kbs1vgmsmot8eg:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="355,188,105,22"/>
+								</reference>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::y5oj43kbs1vgms9knd60:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="461,238,60,30"/>
+							<property name="location_set_by_user" value="true"/>
+							<reference referencedUin="design:link:::66efomkbs1vgms-1d0y7t:y5oj43kbs1vgms9knd60:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="743,376"/>
+								<property name="targetAnchor" value="556,377"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::66efomkbs1vgms-1d0y7t:y5oj43kbs1vgms9knd60:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="581,379,137,22"/>
+								</reference>
+							</reference>
+							<reference referencedUin="design:link:::cygurtkbs1vgmthoqn8a:y5oj43kbs1vgms9knd60:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="772,362"/>
+								<property name="targetAnchor" value="540,188"/>
+								<property name="bendpoints" value="772,260,540,260"/>
+								<property name="smooth_bendpoints" value="772,260,540,260"/>
+								<property name="location_set_by_user" value="true"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::cygurtkbs1vgmthoqn8a:y5oj43kbs1vgms9knd60:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="577,263,159,22"/>
+								</reference>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::cc9n5dkbs1vgmu-imklg:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="21,28,20,20"/>
+							<property name="location_set_by_user" value="true"/>
+							<reference referencedUin="design:link:::896b6akbs1vgmu-3wicl1:cc9n5dkbs1vgmu-imklg:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="322,162"/>
+								<property name="targetAnchor" value="469,162"/>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::599wkdkbs1vgmvh27q6o:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="188,12,104,52"/>
+							<property name="location_set_by_user" value="true"/>
+							<reference referencedUin="design:node:::gnv91pkbs1vgmv52tvpl:599wkdkbs1vgmvh27q6o:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="bounds" value="0,0,102,23"/>
+								<property name="location_set_by_user" value="true"/>
+							</reference>
+							<reference referencedUin="design:link:::7rf0rskbs1vgmvtc7d5l:599wkdkbs1vgmvh27q6o:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="573,184"/>
+								<property name="targetAnchor" value="569,188"/>
+								<property name="location_set_by_user" value="false"/>
+								<property name="bendpoints" value="602,184,602,217,569,217"/>
+								<property name="smooth_bendpoints" value="602,184,602,217,569,217"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::7rf0rskbs1vgmvtc7d5l:599wkdkbs1vgmvh27q6o:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="620,200,161,40"/>
+									<property name="weight" value="0.3629032258064516"/>
+									<property name="bounds_setted_by_user" value="true"/>
+									<property name="location_set_by_user" value="true"/>
+								</reference>
+							</reference>
+							<reference referencedUin="design:link:::8zqckmkbs1vgmvt294ht:599wkdkbs1vgmvh27q6o:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="573,162"/>
+								<property name="targetAnchor" value="1042,162"/>
+								<property name="location_set_by_user" value="true"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::8zqckmkbs1vgmvt294ht:599wkdkbs1vgmvh27q6o:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="780,160,216,22"/>
+									<property name="weight" value="0.44136460554371004"/>
+									<property name="location_set_by_user" value="true"/>
+								</reference>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::ktadztkbs1vgmreg0kgp:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="22,153,18,18"/>
+							<property name="location_set_by_user" value="true"/>
+						</reference>
+						<reference referencedUin="design:node:::xlqwx5kbs1vgmt-mdgk6u:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="753,227,94,52"/>
+							<property name="location_set_by_user" value="true"/>
+							<reference referencedUin="design:link:::pwoi9lkbs1vgmu55eepw:xlqwx5kbs1vgmt-mdgk6u:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="1034,377"/>
+								<property name="targetAnchor" value="801,377"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::pwoi9lkbs1vgmu55eepw:xlqwx5kbs1vgmt-mdgk6u:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="782,400,250,40"/>
+								</reference>
+							</reference>
+							<reference referencedUin="design:node:::k5xesakbs1vgmu-5ufc4e:xlqwx5kbs1vgmt-mdgk6u:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="bounds" value="0,0,92,23"/>
+								<property name="location_set_by_user" value="true"/>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::gx7omckbs1vgmuoc28v2:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="761,12,77,52"/>
+							<property name="location_set_by_user" value="true"/>
+							<reference referencedUin="design:node:::9j1knbkbs1vgmutl9y6w:gx7omckbs1vgmuoc28v2:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="bounds" value="0,0,75,23"/>
+								<property name="location_set_by_user" value="true"/>
+							</reference>
+							<reference referencedUin="design:link:::didrowkbs1vgmuwmwgt5:gx7omckbs1vgmuoc28v2:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+								<property name="sourceAnchor" value="1112,188"/>
+								<property name="targetAnchor" value="1112,351"/>
+								<reference referencedUin="label:$transitionLabel20Inplace:design:link:::didrowkbs1vgmuwmwgt5:gx7omckbs1vgmuoc28v2:-acitv2kbs1uthgyo08zf:-3uf15dkbs1uthfole3yz:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+									<property name="bounds" value="960,258,149,22"/>
+								</reference>
+							</reference>
+						</reference>
+					</reference>
+				</reference>
+				<reference referencedUin="design:node:::k9ofrlkbs1xr6zggj2kf:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+					<property name="bounds" value="44,41,20,20"/>
+					<property name="location_set_by_user" value="true"/>
+					<reference referencedUin="design:link:::ieje0rkbs1xv1vl7d2xb:k9ofrlkbs1xr6zggj2kf:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+						<property name="sourceAnchor" value="110,120"/>
+						<property name="targetAnchor" value="110,180"/>
+						<property name="bendpoints" value=""/>
+					</reference>
+				</reference>
+				<reference referencedUin="design:node:::-3uf15dkbs1tpcy30zc01:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+					<property name="bounds" value="24,121,71,52"/>
+					<property name="location_set_by_user" value="true"/>
+					<reference referencedUin="design:node:::-acitv2kbs1tpd0wcgdht:-3uf15dkbs1tpcy30zc01:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+						<property name="bounds" value="0,0,69,23"/>
+						<property name="location_set_by_user" value="true"/>
+					</reference>
+					<reference referencedUin="design:link:::ieje0rkbs1yt02-kt9aer:-3uf15dkbs1tpcy30zc01:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+						<property name="sourceAnchor" value="100,232"/>
+						<property name="targetAnchor" value="280,260"/>
+						<property name="bendpoints" value="100,260"/>
+						<property name="smooth_bendpoints" value="100,260"/>
+						<property name="location_set_by_user" value="true"/>
+						<reference referencedUin="label:$transitionLabel20Inplace:design:link:::ieje0rkbs1yt02-kt9aer:-3uf15dkbs1tpcy30zc01:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+							<property name="bounds" value="150,263,81,22"/>
+						</reference>
+					</reference>
+				</reference>
+				<reference referencedUin="design:node:::6drk9lkbs1zyo3hmxjoh:-acitv2kbs1r3zy-itu661:j8ctxykbs1r3zw-o4ie7u">
+					<property name="bounds" value="44,321,18,18"/>
+					<property name="location_set_by_user" value="true"/>
+				</reference>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

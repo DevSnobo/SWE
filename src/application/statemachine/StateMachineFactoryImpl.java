@@ -1,11 +1,13 @@
 package application.statemachine;
 
 
+import application.logic.port.MVCPort;
+import application.logic.port.Observer;
+import application.logic.port.Subject;
 import application.statemachine.impl.StateMachineImpl;
 import application.statemachine.port.*;
 
-class StateMachineFactoryImpl implements StateMachineFactory, SubjectPort, StateMachinePort, StateMachine, Subject {
-
+class StateMachineFactoryImpl implements StateMachineFactory, MVCPort, StateMachinePort, StateMachine, Subject {
 
     private StateMachineImpl stateMachine;
 
@@ -13,7 +15,6 @@ class StateMachineFactoryImpl implements StateMachineFactory, SubjectPort, State
         if (this.stateMachine == null)
             this.stateMachine = new StateMachineImpl();
     }
-
 
     @Override
     public SubjectPort subjectPort() {
@@ -39,23 +40,23 @@ class StateMachineFactoryImpl implements StateMachineFactory, SubjectPort, State
     }
 
     @Override
-    public void attach(Observer obs) {
+    public synchronized void attach(Observer obs) {
         this.stateMachine.attach(obs);
     }
 
     @Override
-    public void detach(Observer obs) {
+    public synchronized void detach(Observer obs) {
         this.stateMachine.detach(obs);
     }
 
 
     @Override
-    public State getState() {
+    public synchronized State getState() {
         return this.stateMachine.getState();
     }
 
     @Override
-    public void setState(State state) {
+    public synchronized void setState(State state) {
         this.stateMachine.setState(state);
     }
 

@@ -1,4 +1,4 @@
-package application.statemachine.port;
+package application.logic.port;
 
 public interface Subject {
 

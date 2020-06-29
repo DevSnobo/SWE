@@ -12,6 +12,7 @@ public interface State {
 
     enum S implements State {
         //BEGIN_TURN = check
+        UNINITIALIZED, INITIALIZED, BEGINNING_TURN, DICE_ROLLED, TURN_SELECTED, DUEL_STARTED,
         BEGIN_TURN, TACTIVE, TPASSIVE, THROW(TACTIVE, TPASSIVE), AMOVE, PMOVE, MOVE(AMOVE, PMOVE), NEXTPLAYER, USECASE;
 
         private List<State> subStates;
