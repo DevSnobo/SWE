@@ -31,23 +31,25 @@ public class Controller implements Observer {
     }
 
     public void processInput() {
-        this.gui.show("Type here:"); /* Eingabeaufforderung */
         String input = scanner.nextLine();
-        switch (input) { /* Eingabe */
-            /*case "init":
-                gui.getGameAccessPort().gameplayMethods().initGame();
-                break;*/
+        String[] splits = input.split(" ", 2);
+
+        switch (splits[0]) { /* Eingabe */
             case "start":
                 gui.getGameAccessPort().gameplayMethods().startGame();
-                break;
-            case "select":
-                gui.getGameAccessPort().gameplayMethods().rollDice();
                 break;
             case "roll":
                 gui.getGameAccessPort().gameplayMethods().rollDice();
                 break;
+            case "select":
+                try {
+                    gui.getGameAccessPort().gameplayMethods().selectTurn(Integer.parseInt(splits[1]));
+                } catch (Exception e) {
+                    System.out.println("Unable to parse: " + splits[1] + " as String.");
+                }
+                break;
             case "move":
-                gui.getGameAccessPort().gameplayMethods().selectTurn(0);
+                gui.getGameAccessPort().gameplayMethods().move();
                 break;
 
             case "exit":
@@ -58,5 +60,6 @@ public class Controller implements Observer {
             default:
                 System.out.println("Something went wrong");
         }
+        System.out.println("------------------------------");
     }
 }

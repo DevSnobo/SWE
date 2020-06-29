@@ -5,7 +5,11 @@ import application.logic.port.GameAccessPort;
 import application.logic.port.MVCPort;
 import application.logic.port.Observer;
 import application.moveturn.impl.Player;
+import application.moveturn.impl.Turn;
 import application.statemachine.port.State;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Gui implements Ui, Observer {
 
@@ -62,31 +66,38 @@ public class Gui implements Ui, Observer {
     }
 
     private void display() {
+        System.out.println("------------------------------");
         //TODO: implement display of current board state
-        System.out.println();
+
         Player currentPlayer = gameAccessPort.gameplayMethods().getCurrentPlayer();
         if (currentPlayer != null) {
             System.out.println("Current Player: " + currentPlayer.getName());
         }
 
         if (State.S.INITIALIZED.equals(currentState)) {
-            System.out.println("State: " + State.S.INITIALIZED.name());
             System.out.println("type 'start' to start the game");
 
         } else if (State.S.BEGINNING_TURN.equals(currentState)) {
-            System.out.println("State: " + State.S.BEGINNING_TURN.name());
-            System.out.println("type 'roll'");
+            System.out.println("Options: 'roll'");
 
         } else if (State.S.DICE_ROLLED.equals(currentState)) {
-            System.out.println("State: " + State.S.DICE_ROLLED.name());
             System.out.println("Current dice result: " + gameAccessPort.gameplayMethods().getCurrentResult());
-            System.out.println("Available turns: " + gameAccessPort.gameplayMethods().getCurrentTurnList().size());
+
+            List<Turn>    tmp = gameAccessPort.gameplayMethods().getCurrentTurnList();
+            StringBuilder sb  = new StringBuilder();
+
+            sb.append("Available turns: (").append(tmp.size()).append(")\n");
+
+            for (int index = 0; index < tmp.size(); index++) {
+                sb.append(index).append(": ").append(tmp.get(index).toString()).append("\n");
+            }
+            System.out.println(sb.toString());
 
             System.out.println("type 'select <index>' - index being one turn out of the list shown");
 
         } else if (State.S.TURN_SELECTED.equals(currentState)) {
             // show something
-            System.out.println("State: " + State.S.TURN_SELECTED.name());
+
         }
     }
 }

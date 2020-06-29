@@ -9,14 +9,21 @@ public class Board {
 
     private static Board instance;
 
-    private final List<Unit> boardPositions = new ArrayList<>();
+    private final List<Player> players        = new ArrayList<>();
+    private final List<Unit>   boardPositions = new ArrayList<>();
 
-    private final Queue<Unit> homeRed    = new ArrayDeque<>();
-    private final Queue<Unit> homeYellow = new ArrayDeque<>();
-    private final Queue<Unit> homeGreen  = new ArrayDeque<>();
-    private final Queue<Unit> homeBlue   = new ArrayDeque<>();
+    private final Queue<Unit> homeRed       = new ArrayDeque<>();
+    private final Queue<Unit> homeYellow    = new ArrayDeque<>();
+    private final Queue<Unit> homeGreen     = new ArrayDeque<>();
+    private final Queue<Unit> homeBlue      = new ArrayDeque<>();
+    private       Player      currentPlayer = null;
 
     private Board() {
+        players.add(new Player(Colour.RED, "Rot", 0));
+        players.add(new Player(Colour.YELLOW, "Gelb", 12));
+        players.add(new Player(Colour.GREEN, "Gruen", 24));
+        players.add(new Player(Colour.BLUE, "Blau", 36));
+
         initBoardPositions();
         initPlayerHomes();
     }
@@ -26,6 +33,10 @@ public class Board {
             instance = new Board();
         }
         return instance;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
     }
 
     public List<Unit> getBoardPositions() {
@@ -49,6 +60,14 @@ public class Board {
             return boardPositions.get(index).getColour();
         }
         return Colour.NONE;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
     private void initBoardPositions() {

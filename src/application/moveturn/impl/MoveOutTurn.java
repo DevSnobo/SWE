@@ -1,6 +1,5 @@
 package application.moveturn.impl;
 
-import java.util.List;
 import java.util.Queue;
 
 public class MoveOutTurn extends Turn {
@@ -10,15 +9,14 @@ public class MoveOutTurn extends Turn {
     /**
      * Creates a Turn from the player's home to the board.
      *
-     * @param unitToMove Unit that is moved from it's home.
-     * @param moveTo     Board the Unit is moved to.
-     * @param to         Index on the board the Unit is moved to.
+     * @param board Complete board.
      */
-    public MoveOutTurn(Unit unitToMove, Queue<Unit> moveFrom, List<Unit> moveTo, int to) {
-        this.unitToMove = unitToMove;
-        this.moveFrom = moveFrom;
-        this.moveTo = moveTo;
-        this.to = to;
+    public MoveOutTurn(Board board) {
+        this.board = board;
+        this.moveFrom = board.getHome(board.getCurrentPlayer().getColour());
+        this.unitToMove = moveFrom.peek();
+        this.moveTo = board.getBoardPositions();
+        this.to = board.getCurrentPlayer().getStartPosition();
     }
 
     @Override
@@ -28,17 +26,24 @@ public class MoveOutTurn extends Turn {
 
     @Override
     public void execute() {
-        //TODO: implement this
-        //TODO: move other player's units back to their home/start
-        super.execute();
-
         Unit moveThis = moveFrom.poll();
 
+        //TODO: start duel here, but don't
         if (moveTo.get(to) != null) {
+            Unit toReset = moveTo.get(to);
+            Player pownedPlayer = board.getPlayers().stream() //
+                                       .filter(player -> player.getColour() == toReset.getColour()) //
+                                       .findAny().get();
 
+            if (board.getColourAtIndex(pownedPlayer.getStartPosition()) == pownedPlayer.getColour()) {
+                // to home (own unit on start)
+                board.getHome(pownedPlayer.getColour()).offer(toReset);
+            } else {
+                // to start (enemy or nothing on start)
+                new MoveOnBoardTurn(board, to, pownedPlayer.getStartPosition()).execute();
+            }
+            moveTo.set(to, null);
         }
-
         moveTo.set(to, moveThis);
-
     }
 }

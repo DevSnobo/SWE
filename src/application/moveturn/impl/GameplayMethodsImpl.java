@@ -5,11 +5,10 @@ import application.statemachine.port.State;
 import application.statemachine.port.StateMachine;
 import application.statemachine.port.StateMachinePort;
 
-import java.net.CookieHandler;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Queue;
-import java.util.Random;
 
 public class GameplayMethodsImpl implements GameplayMethods {
 
@@ -17,9 +16,9 @@ public class GameplayMethodsImpl implements GameplayMethods {
     private final int PLAYER_COUNT = 4;
 
     private final StateMachine stateMachine;
-    private final List<Player> players         = new ArrayList<>();
     private final List<Turn>   currentTurnList = new ArrayList<>();
-    private       Board        gameBoard;
+    private       Board        board;
+    private       List<Player> players;
     private       Player       currentPlayer   = null;
     private       Dice         dice;
     private       int          currentResult   = 0;
@@ -33,12 +32,9 @@ public class GameplayMethodsImpl implements GameplayMethods {
     @Override
     public void initGame() {
         // initialize fields/board/whatever?
-        players.add(new Player(Colour.RED, "Rot", 0));
-        players.add(new Player(Colour.YELLOW, "Gelb", 12));
-        players.add(new Player(Colour.GREEN, "Gruen", 24));
-        players.add(new Player(Colour.BLUE, "Blau", 36));
 
-        gameBoard = Board.getInstance();
+        board = Board.getInstance();
+        players = board.getPlayers();
         dice = new Dice();
 
         stateMachine.setState(State.S.INITIALIZED);
@@ -46,9 +42,17 @@ public class GameplayMethodsImpl implements GameplayMethods {
 
     @Override
     public void startGame() {
-        // randomize start player? do something or whatever
         Colour startColour = Colour.of(dice.roll(PLAYER_COUNT));
-        currentPlayer = players.stream().filter(player -> player.getColour() == startColour).findAny().get();
+
+        Optional<Player> opt = players.stream().filter(player -> player.getColour() == startColour).findAny();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        currentPlayer = opt.get();
+        board.setCurrentPlayer(currentPlayer);
 
         stateMachine.setState(State.S.BEGINNING_TURN);
     }
@@ -59,32 +63,26 @@ public class GameplayMethodsImpl implements GameplayMethods {
         currentTurnList.clear();
         currentResult = 0;
 
-        currentResult = dice.roll();
-
-        // home full?
         if (isHomeFull()) {
-            int rollCount = 1;
-
-            System.out.println("rolled: " + currentResult);
-            while (rollCount < 4) {
-                if (currentResult == Dice.MAX_ROLL) {
-                    // create Turn list
-                    Queue<Unit> home = gameBoard.getHome(currentPlayer.getColour());
-                    currentTurnList.add(
-                            new MoveOutTurn(home.peek(), home,
-                                            gameBoard.getBoardPositions(),
-                                            currentPlayer.getStartPosition()));
-                    break;
-                }
+            int rollCount = 0;
+            while (rollCount < 3) {
                 currentResult = dice.roll();
                 System.out.println("rolled: " + currentResult);
                 rollCount++;
+
+                if (currentResult == Dice.MAX_ROLL) {
+                    //INFO: adding turn from home
+                    currentTurnList.add(new MoveOutTurn(board));
+                    break;
+                }
             }
             if (currentTurnList.size() == 0) {
+                //INFO: next player, if no turns available
                 nextPlayer();
                 stateMachine.setState(State.S.BEGINNING_TURN);
                 return;
             }
+            //INFO: execute turn immediately and end turn
             currentTurnList.get(0).execute();
             System.out.println("moved to start");
             nextPlayer();
@@ -92,23 +90,20 @@ public class GameplayMethodsImpl implements GameplayMethods {
             return;
 
         } else {
+            currentResult = dice.roll();
+            //INFO: adding turns from home
             if (currentResult == Dice.MAX_ROLL && canMoveOut()) {
-                //TODO: make sure other player's units are brought back to their home/start
-                Queue<Unit> home = gameBoard.getHome(currentPlayer.getColour());
-                currentTurnList.add(
-                        new MoveOutTurn(home.peek(), home,
-                                        gameBoard.getBoardPositions(),
-                                        currentPlayer.getStartPosition()));
+                currentTurnList.add(new MoveOutTurn(board));
             }
+            //INFO: adding normal turns
             for (int index = 0; index < Board.BOARD_LENGTH; index++) {
-                if (gameBoard.getColourAtIndex(index) == currentPlayer.getColour()) {
+                if (board.getColourAtIndex(index) == currentPlayer.getColour()
+                    && canMoveTo(index + currentResult % Board.BOARD_LENGTH)) {
                     currentTurnList.add(
-                            new MoveOnBoardTurn(gameBoard.getBoardPositions().get(index), gameBoard.getBoardPositions(),
-                                                index, index + currentResult % Board.BOARD_LENGTH));
+                            new MoveOnBoardTurn(board, index, index + currentResult % Board.BOARD_LENGTH));
                 }
             }
         }
-        //TODO: add normal turns here
         stateMachine.setState(State.S.DICE_ROLLED);
     }
 
@@ -124,6 +119,9 @@ public class GameplayMethodsImpl implements GameplayMethods {
 
     @Override
     public void selectTurn(int pos) {
+        if (pos >= currentTurnList.size()) {
+            return;
+        }
         selectedTurn = currentTurnList.get(pos);
         stateMachine.setState(State.S.TURN_SELECTED);
     }
@@ -164,13 +162,19 @@ public class GameplayMethodsImpl implements GameplayMethods {
     }
 
     private boolean isHomeFull() {
-        return gameBoard.getHome(currentPlayer.getColour()).size() == Board.UNIT_COUNT;
+        return board.getHome(currentPlayer.getColour()).size() == Board.UNIT_COUNT;
     }
 
     private boolean canMoveOut() {
-        return gameBoard.getColourAtIndex(currentPlayer.getStartPosition()) != currentPlayer.getColour();
+        //TODO: change here for variant
+        return board.getColourAtIndex(currentPlayer.getStartPosition()) != currentPlayer.getColour();
     }
 
-    // GetAllPlayers
+    private boolean canMoveTo(int index) {
+        //TODO: change here for variant
+        return board.getColourAtIndex(index) != currentPlayer.getColour();
+    }
+
+    // GetAllUnits
 
 }

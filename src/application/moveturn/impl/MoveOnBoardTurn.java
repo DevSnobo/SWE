@@ -7,14 +7,14 @@ public class MoveOnBoardTurn extends Turn {
     /**
      * Creates a Turn that moves a Unit to a different position on the board.
      *
-     * @param unitToMove Unit that is moved.
-     * @param moveTo     Board the Unit is moved to.
-     * @param from       Index on the board the Unit is moved from.
-     * @param to         Index on the board the Unit is moved to.
+     * @param board Complete board.
+     * @param from  Index on the board the Unit is moved from.
+     * @param to    Index on the board the Unit is moved to.
      */
-    public MoveOnBoardTurn(Unit unitToMove, List<Unit> moveTo, int from, int to) {
-        this.unitToMove = unitToMove;
-        this.moveTo = moveTo;
+    public MoveOnBoardTurn(Board board, int from, int to) {
+        this.board = board;
+        this.unitToMove = board.getBoardPositions().get(from);
+        this.moveTo = board.getBoardPositions();
         this.from = from;
         this.to = to;
     }
@@ -26,8 +26,24 @@ public class MoveOnBoardTurn extends Turn {
 
     @Override
     public void execute() {
-        //TODO: implement this
-        //TODO: move other player's units back to their home/start
-        super.execute();
+        if (moveTo.get(to) != null) {
+            Unit toReset = moveTo.get(to);
+            Player pownedPlayer = board.getPlayers().stream() //
+                                       .filter(player -> player.getColour() == toReset.getColour()) //
+                                       .findAny().get();
+
+            if (board.getColourAtIndex(pownedPlayer.getStartPosition()) == pownedPlayer.getColour()) {
+                // to home (own unit on start)
+                board.getHome(pownedPlayer.getColour()).offer(toReset);
+            } else {
+                // to start (enemy or nothing on start)
+                new MoveOnBoardTurn(board, to, pownedPlayer.getStartPosition()).execute();
+            }
+            moveTo.set(to, null);
+        }
+
+        Unit moveThis = unitToMove;
+        moveTo.set(to, moveThis);
+        moveTo.set(from, null);
     }
 }
