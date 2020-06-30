@@ -1,5 +1,6 @@
 package application.moveturn.impl;
 
+import application.moveturn.port.GameplayInfos;
 import application.moveturn.port.GameplayMethods;
 import application.statemachine.port.State;
 import application.statemachine.port.StateMachine;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Queue;
 
-public class GameplayMethodsImpl implements GameplayMethods {
+public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
 
     // Player, Board, StateMachine, Dice, Result, CurrentPlayer
     private final int PLAYER_COUNT = 4;
@@ -45,12 +46,6 @@ public class GameplayMethodsImpl implements GameplayMethods {
         Colour startColour = Colour.of(dice.roll(PLAYER_COUNT));
 
         Optional<Player> opt = players.stream().filter(player -> player.getColour() == startColour).findAny();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         currentPlayer = opt.get();
         board.setCurrentPlayer(currentPlayer);
 
@@ -108,18 +103,8 @@ public class GameplayMethodsImpl implements GameplayMethods {
     }
 
     @Override
-    public int getCurrentResult() {
-        return currentResult;
-    }
-
-    @Override
-    public List<Turn> getCurrentTurnList() {
-        return currentTurnList;
-    }
-
-    @Override
     public void selectTurn(int pos) {
-        if (pos >= currentTurnList.size()) {
+        if (pos < 0 || pos >= currentTurnList.size()) {
             return;
         }
         selectedTurn = currentTurnList.get(pos);
@@ -135,10 +120,34 @@ public class GameplayMethodsImpl implements GameplayMethods {
     }
 
     @Override
+    public int getCurrentResult() {
+        return currentResult;
+    }
+
+    @Override
+    public List<Turn> getCurrentTurnList() {
+        return currentTurnList;
+    }
+
+    @Override
     public Player getCurrentPlayer() {
         return currentPlayer;
     }
 
+    @Override
+    public List<String> getAllUnitsOnBoard() {
+        List<String> unitList = new ArrayList<>();
+
+        for (int boardIndex = 0; boardIndex < Board.BOARD_LENGTH; boardIndex++) {
+            if (board.getColourAtIndex(boardIndex) == Colour.NONE) {
+                continue;
+            }
+            unitList.add(board.getBoardPositions().get(boardIndex).getName() + " at position: " + boardIndex);
+        }
+        return unitList;
+    }
+
+    @Override
     public Turn getSelectedTurn() {
         return selectedTurn;
     }
@@ -146,19 +155,23 @@ public class GameplayMethodsImpl implements GameplayMethods {
     private void nextPlayer() {
         switch (currentPlayer.getColour()) {
             case RED:
-                currentPlayer =
-                        players.stream().filter(player -> player.getColour() == Colour.YELLOW).findFirst().get();
+                board.setCurrentPlayer(
+                        players.stream().filter(player -> player.getColour() == Colour.YELLOW).findFirst().get());
                 break;
             case YELLOW:
-                currentPlayer = players.stream().filter(player -> player.getColour() == Colour.GREEN).findFirst().get();
+                board.setCurrentPlayer(
+                        players.stream().filter(player -> player.getColour() == Colour.GREEN).findFirst().get());
                 break;
             case GREEN:
-                currentPlayer = players.stream().filter(player -> player.getColour() == Colour.BLUE).findFirst().get();
+                board.setCurrentPlayer(
+                        players.stream().filter(player -> player.getColour() == Colour.BLUE).findFirst().get());
                 break;
             case BLUE:
-                currentPlayer = players.stream().filter(player -> player.getColour() == Colour.RED).findFirst().get();
+                board.setCurrentPlayer(
+                        players.stream().filter(player -> player.getColour() == Colour.RED).findFirst().get());
                 break;
         }
+        currentPlayer = board.getCurrentPlayer();
     }
 
     private boolean isHomeFull() {

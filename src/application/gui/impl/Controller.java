@@ -38,9 +38,11 @@ public class Controller implements Observer {
             case "start":
                 gui.getGameAccessPort().gameplayMethods().startGame();
                 break;
+
             case "roll":
                 gui.getGameAccessPort().gameplayMethods().rollDice();
                 break;
+
             case "select":
                 try {
                     gui.getGameAccessPort().gameplayMethods().selectTurn(Integer.parseInt(splits[1]));
@@ -48,8 +50,20 @@ public class Controller implements Observer {
                     System.out.println("Unable to parse: " + splits[1] + " as String.");
                 }
                 break;
+
             case "move":
                 gui.getGameAccessPort().gameplayMethods().move();
+                break;
+
+            case "board":
+                gui.show(gui.getGameAccessPort().gameplayInfos().getAllUnitsOnBoard());
+                break;
+
+            case "help":
+            case "?":
+            case "wtf":
+            case "what":
+                gui.showHelp();
                 break;
 
             case "exit":
@@ -60,6 +74,5 @@ public class Controller implements Observer {
             default:
                 System.out.println("Something went wrong");
         }
-        System.out.println("------------------------------");
     }
 }

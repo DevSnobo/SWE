@@ -3,6 +3,7 @@ package application.logic;
 import application.logic.port.GameAccessPort;
 import application.logic.port.MVCPort;
 import application.moveturn.MoveTurnFactory;
+import application.moveturn.port.GameplayInfos;
 import application.moveturn.port.GameplayMethods;
 import application.moveturn.port.GameProviderPort;
 import application.logic.port.Subject;
@@ -32,5 +33,10 @@ class LogicFactoryImpl implements LogicFactory, GameAccessPort, MVCPort {
     @Override
     public GameplayMethods gameplayMethods() {
         return this.gameProviderPort.gameplayMethods();
+    }
+
+    @Override
+    public GameplayInfos gameplayInfos() {
+        return this.gameProviderPort.gameplayInfos();
     }
 }

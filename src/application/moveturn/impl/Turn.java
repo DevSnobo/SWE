@@ -1,6 +1,5 @@
 package application.moveturn.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 public abstract class Turn {

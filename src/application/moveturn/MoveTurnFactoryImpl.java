@@ -3,6 +3,7 @@ package application.moveturn;
 import application.moveturn.impl.GameplayMethodsImpl;
 import application.moveturn.impl.Player;
 import application.moveturn.impl.Turn;
+import application.moveturn.port.GameplayInfos;
 import application.moveturn.port.GameplayMethods;
 import application.moveturn.port.GameProviderPort;
 import application.statemachine.StateMachineFactory;
@@ -12,11 +13,11 @@ import application.statemachine.port.StateMachinePort;
 
 import java.util.List;
 
-class MoveTurnFactoryImpl implements MoveTurnFactory, GameProviderPort, GameplayMethods {
+class MoveTurnFactoryImpl implements MoveTurnFactory, GameProviderPort, GameplayMethods, GameplayInfos {
 
-    private StateMachinePort    stateMachinePort = StateMachineFactory.FACTORY.stateMachinePort();
-    private StateMachine        stateMachine;
-    private GameplayMethodsImpl game;
+    private final StateMachinePort    stateMachinePort = StateMachineFactory.FACTORY.stateMachinePort();
+    private       StateMachine        stateMachine;
+    private       GameplayMethodsImpl game;
 
     @Override
     public GameProviderPort gameProviderPort() {
@@ -25,37 +26,59 @@ class MoveTurnFactoryImpl implements MoveTurnFactory, GameProviderPort, Gameplay
 
     @Override
     public GameplayMethods gameplayMethods() {
-        this.createGame();
+        createGame();
+        return this;
+    }
+
+    @Override
+    public GameplayInfos gameplayInfos() {
+        createGame();
         return this;
     }
 
     @Override
     public void initGame() {
-        if (this.stateMachine.getState() != State.S.UNINITIALIZED) {
+        if (stateMachine.getState() != State.S.UNINITIALIZED) {
             return;
         }
-        this.game.initGame();
+        game.initGame();
     }
 
     @Override
     public void startGame() {
-        if (this.stateMachine.getState() != State.S.INITIALIZED) {
+        if (stateMachine.getState() != State.S.INITIALIZED) {
             return;
         }
-        this.game.startGame();
+        game.startGame();
     }
 
     @Override
     public void rollDice() {
-        if (this.stateMachine.getState() != State.S.BEGINNING_TURN) {
+        if (stateMachine.getState() != State.S.BEGINNING_TURN) {
             return;
         }
-        this.game.rollDice();
+        game.rollDice();
+    }
+
+    @Override
+    public void selectTurn(int pos) {
+        if (stateMachine.getState() != State.S.DICE_ROLLED && stateMachine.getState() != State.S.TURN_SELECTED) {
+            return;
+        }
+        game.selectTurn(pos);
+    }
+
+    @Override
+    public void move() {
+        if (stateMachine.getState() != State.S.TURN_SELECTED) {
+            return;
+        }
+        game.move();
     }
 
     @Override
     public int getCurrentResult() {
-        if (this.stateMachine.getState() != State.S.DICE_ROLLED) {
+        if (stateMachine.getState() != State.S.DICE_ROLLED) {
             return -1;
         }
         return game.getCurrentResult();
@@ -63,40 +86,42 @@ class MoveTurnFactoryImpl implements MoveTurnFactory, GameProviderPort, Gameplay
 
     @Override
     public List<Turn> getCurrentTurnList() {
-        if (this.stateMachine.getState() != State.S.DICE_ROLLED) {
+        if (stateMachine.getState() != State.S.DICE_ROLLED && stateMachine.getState() != State.S.TURN_SELECTED) {
             return null;
         }
-        return this.game.getCurrentTurnList();
-    }
-
-    @Override
-    public void selectTurn(int pos) {
-        if (this.stateMachine.getState() != State.S.DICE_ROLLED) {
-            return;
-        }
-        this.game.selectTurn(pos);
-    }
-
-    @Override
-    public void move() {
-        if (this.stateMachine.getState() != State.S.TURN_SELECTED) {
-            return;
-        }
-        this.game.move();
+        return game.getCurrentTurnList();
     }
 
     @Override
     public Player getCurrentPlayer() {
-        if (this.stateMachine.getState() == State.S.UNINITIALIZED || this.stateMachine.getState() == State.S.INITIALIZED) {
+        if (stateMachine.getState() == State.S.UNINITIALIZED || stateMachine.getState() == State.S.INITIALIZED) {
             return null;
         }
-        return this.game.getCurrentPlayer();
+        return game.getCurrentPlayer();
+    }
+
+    @Override
+    public List<String> getAllUnitsOnBoard() {
+        if (stateMachine.getState() != State.S.BEGINNING_TURN
+            && stateMachine.getState() != State.S.DICE_ROLLED
+            && stateMachine.getState() != State.S.TURN_SELECTED) {
+            return null;
+        }
+        return game.getAllUnitsOnBoard();
+    }
+
+    @Override
+    public Turn getSelectedTurn() {
+        if (stateMachine.getState() != State.S.TURN_SELECTED) {
+            return null;
+        }
+        return game.getSelectedTurn();
     }
 
     private void createGame() {
-        if (this.game == null) {
+        if (game == null) {
             stateMachine = stateMachinePort.stateMachine();
-            this.game = new GameplayMethodsImpl(stateMachinePort);
+            game = new GameplayMethodsImpl(stateMachinePort);
         }
     }
 }

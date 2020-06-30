@@ -26,21 +26,7 @@ public class MoveOnBoardTurn extends Turn {
 
     @Override
     public void execute() {
-        if (moveTo.get(to) != null) {
-            Unit toReset = moveTo.get(to);
-            Player pownedPlayer = board.getPlayers().stream() //
-                                       .filter(player -> player.getColour() == toReset.getColour()) //
-                                       .findAny().get();
-
-            if (board.getColourAtIndex(pownedPlayer.getStartPosition()) == pownedPlayer.getColour()) {
-                // to home (own unit on start)
-                board.getHome(pownedPlayer.getColour()).offer(toReset);
-            } else {
-                // to start (enemy or nothing on start)
-                new MoveOnBoardTurn(board, to, pownedPlayer.getStartPosition()).execute();
-            }
-            moveTo.set(to, null);
-        }
+        super.pownUnit();
 
         Unit moveThis = unitToMove;
         moveTo.set(to, moveThis);
