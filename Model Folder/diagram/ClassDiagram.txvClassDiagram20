@@ -138,7 +138,7 @@
 			</reference>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.moveturn.MoveTurnFactoryImpl">
-			<property name="bounds" value="614,515,200,220"/>
+			<property name="bounds" value="614,515,200,402"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="$shortcutReference" value="true"/>
 			<reference referencedUin="jdt:l_impl:src:application.moveturn.MoveTurnFactoryImpl:MoveTurnFactory">
