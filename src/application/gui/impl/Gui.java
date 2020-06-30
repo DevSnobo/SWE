@@ -72,8 +72,9 @@ public class Gui implements Ui, Observer {
           .append("   select <index>: selects one of the available turns and prepares execution of it, \n")
           .append("                       <index> being a number between 1 and 3\n")
           .append("   move:           confirms selected turn and executes it\n")
-          .append("   board:          show the current state of the board\n")
-          .append("   help | ?:       show this help message\n")
+          .append("   board:          shows the current state of the board\n")
+          .append("   exit | quit:    exits the game and stops the program\n")
+          .append("   help | ?:       shows this help message\n")
           .append("------------------------------");
 
         System.out.println(sb.toString());

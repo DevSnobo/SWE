@@ -9,11 +9,9 @@ import application.statemachine.port.StateMachinePort;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Queue;
 
 public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
 
-    // Player, Board, StateMachine, Dice, Result, CurrentPlayer
     private final int PLAYER_COUNT = 4;
 
     private final StateMachine stateMachine;
@@ -32,7 +30,6 @@ public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
 
     @Override
     public void initGame() {
-        // initialize fields/board/whatever?
         board = Board.getInstance();
         players = board.getPlayers();
         dice = new Dice();
@@ -42,22 +39,7 @@ public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
 
     @Override
     public void startGame() {
-        Colour startColour = Colour.of(dice.roll(PLAYER_COUNT));
-
-        Optional<Player> opt      = null;
-        boolean          foundHim = false;
-        while (!foundHim) {
-            try {
-                Thread.sleep(200);
-                opt = players.stream().filter(player -> player.getColour() == startColour).findAny();
-                if (opt.isPresent()) {
-                    foundHim = true;
-                }
-            } catch (InterruptedException ignored) {
-            }
-        }
-
-        currentPlayer = opt.get();
+        currentPlayer = players.get(0);
         board.setCurrentPlayer(currentPlayer);
 
         stateMachine.setState(State.S.BEGINNING_TURN);
@@ -65,7 +47,6 @@ public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
 
     @Override
     public void rollDice() {
-        // roll dice, check if turns available, else next player and -> beginning_turn
         currentTurnList.clear();
         currentResult = 0;
 
@@ -198,7 +179,4 @@ public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
         //TODO: change here for variant
         return board.getColourAtIndex(index) != currentPlayer.getColour();
     }
-
-    // GetAllUnits
-
 }

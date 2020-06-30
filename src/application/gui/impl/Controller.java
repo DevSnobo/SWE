@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 public class Controller implements Observer {
 
-    private Gui     gui;
-    private State   currentState;
-    private MVCPort mvcPort;
-
-    private Scanner scanner;
+    private final Gui   gui;
+    private final MVCPort mvcPort;
+    private final Scanner scanner;
+    private       State   currentState;
 
     public Controller(Gui gui) {
         this.gui = gui;
@@ -34,7 +33,7 @@ public class Controller implements Observer {
         String input = scanner.nextLine();
         String[] splits = input.split(" ", 2);
 
-        switch (splits[0]) { /* Eingabe */
+        switch (splits[0]) {
             case "start":
                 gui.getGameAccessPort().gameplayMethods().startGame();
                 break;
