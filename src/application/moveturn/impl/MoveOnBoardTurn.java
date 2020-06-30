@@ -21,7 +21,8 @@ public class MoveOnBoardTurn extends Turn {
 
     @Override
     public String toString() {
-        return unitToMove.getName() + ": board(" + from + ") -> board(" + to + ")";
+        String pownMarker = wouldPown() ? " ---> duel" : "";
+        return unitToMove.getName() + ": board(" + from + ") -> board(" + to + ")" + pownMarker;
     }
 
     @Override

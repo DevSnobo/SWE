@@ -38,4 +38,8 @@ public abstract class Turn {
             moveTo.set(to, null);
         }
     }
+
+    public boolean wouldPown() {
+        return moveTo.get(to) != null && moveTo.get(to).getColour() != unitToMove.getColour();
+    }
 }

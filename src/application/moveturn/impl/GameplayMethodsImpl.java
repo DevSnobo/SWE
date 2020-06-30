@@ -33,7 +33,6 @@ public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
     @Override
     public void initGame() {
         // initialize fields/board/whatever?
-
         board = Board.getInstance();
         players = board.getPlayers();
         dice = new Dice();
@@ -45,7 +44,19 @@ public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
     public void startGame() {
         Colour startColour = Colour.of(dice.roll(PLAYER_COUNT));
 
-        Optional<Player> opt = players.stream().filter(player -> player.getColour() == startColour).findAny();
+        Optional<Player> opt      = null;
+        boolean          foundHim = false;
+        while (!foundHim) {
+            try {
+                Thread.sleep(200);
+                opt = players.stream().filter(player -> player.getColour() == startColour).findAny();
+                if (opt.isPresent()) {
+                    foundHim = true;
+                }
+            } catch (InterruptedException ignored) {
+            }
+        }
+
         currentPlayer = opt.get();
         board.setCurrentPlayer(currentPlayer);
 
@@ -93,9 +104,9 @@ public class GameplayMethodsImpl implements GameplayMethods, GameplayInfos {
             //INFO: adding normal turns
             for (int index = 0; index < Board.BOARD_LENGTH; index++) {
                 if (board.getColourAtIndex(index) == currentPlayer.getColour()
-                    && canMoveTo(index + currentResult % Board.BOARD_LENGTH)) {
+                    && canMoveTo((index + currentResult) % Board.BOARD_LENGTH)) {
                     currentTurnList.add(
-                            new MoveOnBoardTurn(board, index, index + currentResult % Board.BOARD_LENGTH));
+                            new MoveOnBoardTurn(board, index, (index + currentResult) % Board.BOARD_LENGTH));
                 }
             }
         }
