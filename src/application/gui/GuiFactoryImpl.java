@@ -32,6 +32,5 @@ public class GuiFactoryImpl implements GuiFactory, UiPort, Ui {
     @Override
     public void startEventLoop() {
         this.gui.startEventLoop();
-        this.gui.getGameAccessPort().gameplayMethods().initGame();
     }
 }
